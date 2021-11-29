@@ -1,3 +1,11 @@
+echo "# scripts_general" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin {git_url}
+git push -u origin main
+
 git remote update origin --prune
 git checkout -b {novabranch}
 git checkout master
