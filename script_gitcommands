@@ -1,0 +1,23 @@
+git remote update origin --prune
+git checkout -b {novabranch}
+git checkout master
+git branch -a
+git branch
+git reset --merge a9fdeb5
+
+git reset --merge HEAD~1
+
+git add .
+git commit -a -m "" -m ""
+git push origin {branch}
+
+git checkout master
+git merge release
+git add .
+git tag -a 0.0.1 -m "Descrição de Topo, Titulo" -m "Mensagem de descrição de corpo, releases"
+git push --tag
+git push origin master
+
+git flow init
+
+git tag -l -n50 | awk "{split(\$0,a,\"-\"); print a[1] a[2];}" > tags.txt

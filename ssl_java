@@ -1,0 +1,24 @@
+JAVA: 
+openssl pkcs12 -export -in fullchain.pem -inkey privkey.pem -out keystore.p12 -name tomcat -CAfile chain.pem -caname root
+
+server.port: 8080
+security.require-ssl=true
+server.ssl.key-store:/etc/letsencrypt/live/path/keystore.p12
+server.ssl.key-store-password: <your-password>
+server.ssl.keyStoreType: PKCS12
+server.ssl.keyAlias: tomcat
+
+
+ssl_ca=/etc/letsencrypt/live/server.crosoften.com/chain.pem
+ssl_cert=/etc/letsencrypt/live/server.crosoften.com/cert.pem
+ssl_key=/etc/letsencrypt/live/server.crosoften.com/privkey.pem
+
+
+.ifexists module-echo-cancel.so
+load-module module-echo-cancel aec_method=webrtc source_name=echocancel sink_name=echocancel1
+set-default-source echocancel
+set-default-sink echocancel1
+.endi
+
+
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=Minuta.pdf MinutaUnzip.pdf
