@@ -42,3 +42,16 @@ git commit -m "Revert to 56e05fced"
 
 # Updates working copy to reflect the new commit
 git reset --hard
+
+################################################################################################
+# Starting from GitLab 10.0, repositories are hashed
+# Usually Git repositories are stored in this directory
+/var/opt/gitlab/git-data/repositories/
+
+# Depending on version, GitLab uses one several storage types. Legacy storage (default for GitLab < 10.0) type uses
+#{namespace}/#{project_name}.git
+
+For example, if the project ID is “1”. So to find a hash of it run:
+
+$ echo -n 1 | sha256sum 
+6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b
