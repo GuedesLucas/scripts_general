@@ -55,3 +55,25 @@ For example, if the project ID is “1”. So to find a hash of it run:
 
 $ echo -n 1 | sha256sum 
 6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b
+
+
+
+##################################################################################################
+
+# Resets index to former commit; replace '56e05fced' with your commit code
+git reset 56e05fced 
+
+# Moves pointer back to previous HEAD
+git reset --soft HEAD@{1}
+
+git checkout -b {NovaBranch}
+
+git push origin {NovaBranch}
+
+
+
+##################################################################################################
+
+Comandos para forçar um commit novo para voltar os arquivos ou correções
+
+git push -f origin release:develop
