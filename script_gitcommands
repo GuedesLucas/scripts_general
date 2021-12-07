@@ -76,4 +76,4 @@ git push origin {NovaBranch}
 
 Comandos para forçar um commit novo para voltar os arquivos ou correções
 
-git push -f origin release:develop
+git push -f origin release:master
