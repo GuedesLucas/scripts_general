@@ -77,3 +77,11 @@ git push origin {NovaBranch}
 Comandos para forçar um commit novo para voltar os arquivos ou correções
 
 git push -f origin release:master
+
+
+##################################################################################################
+
+Gera um token novo e setar no global para usar no terminal
+git config --global credential.helper store
+git config --global user.name "your name"
+git config --global user.password "token gerado"
