@@ -19,12 +19,20 @@ git add .
 git commit -a -m "" -m ""
 git push origin {branch}
 
+################################################################################################
+###################       GIT MERGE ON PRODUCTION FROM RELEASE VERSION       ###################
+################################################################################################
+git checkout release-v0.0.0
+git pull
 git checkout master
-git merge release
+git pull
+git merge release-v0.0.0
 git add .
 git tag -a 0.0.1 -m "Descrição de Topo, Titulo" -m "Mensagem de descrição de corpo, releases"
 git push --tag
 git push origin master
+git branch -d release-v0.0.0
+################################################################################################
 
 git flow init
 
