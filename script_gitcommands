@@ -32,7 +32,7 @@ git tag -a 0.0.1 -m "Descrição de Topo, Titulo" -m "Mensagem de descrição de
 gitmoji -c
 git push --tag
 git push origin master
-git branch -d release-v0.0.0
+git push origin --delete release-v0.0.0
 ################################################################################################
 
 git flow init
